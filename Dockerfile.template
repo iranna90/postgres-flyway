@@ -1,0 +1,6 @@
+FROM postgres:${POSTGRES_VERSION}
+
+COPY ./prepare.sh /docker-entrypoint-initdb.d/prepare.sh
+COPY ./flyway/ /docker-entrypoint-initdb.d/flyway/
+
+CMD ["postgres"]
